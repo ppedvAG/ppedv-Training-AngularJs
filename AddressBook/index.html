@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html ng-app="AddressModule">
+<head>
+    <title>Online Address Book</title>
+    <meta charset="utf-8" />
+
+    <!--Styles-->
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <link href="Content/animations-angular.css" rel="stylesheet" />
+    <style>
+        body {
+            width: 80%;
+            margin: 10px auto;
+        }
+    </style>
+
+    <!--Scripte-->
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-sanitize.js"></script>
+    <script src="Scripts/angular-ui-router.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/angular-translate.js"></script>
+    <script src="Scripts/angular-dynamic-locale.js"></script>
+
+    <script src="BusinessLogic/Module/AddressModule.js"></script>
+    <script src="BusinessLogic/Controllers/AddressController.js"></script>
+    <script src="BusinessLogic/Controllers/SettingsController.js"></script>
+    <script src="BusinessLogic/Filters/IconMailFilter.js"></script>
+</head>
+<body>
+    <header>
+        <ul class="nav nav-tabs">
+            <li class=""><a ui-sref="Home">{{'Home' | translate}}</a></li>
+            <li class=""><a ui-sref="Overview" translate="AddressBook"></a></li>
+            <li class=""><a ui-sref="Settings" translate="Settings"></a></li>
+        </ul>
+    </header>
+
+    <main ui-view></main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Directives</title>
+    <meta charset="utf-8" />
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+
+
+    <!--Style Sheets-->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!--Scripte-->
+    <script src="Scripts/jquery-3.1.1.js"></script>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="BusinessLogic/Module/AddressModule.js"></script>
+    <script src="BusinessLogic/Directives/HelloWorldDirective.js"></script>
+
+    <script src="Scripts/i18n/angular-locale_en-us.js"></script>
+</head>
+<body ng-app="AddressModule">
+
+    <div ng-controller="HelloWorld">
+        <hello-world color-oneway="{{color}}" color-attr="color" random-color="ChangeColor()"></hello-world>
+
+        <input type="text" placeholder="Enter a color" ng-model="color" />
+
+        <!--
+            Mögliche Schreibweisen
+
+        <hello:world></hello:world>
+        <div hello-world></div>
+        -->
+    </div>
+
+</body>
+</html>
+
+
+
+  

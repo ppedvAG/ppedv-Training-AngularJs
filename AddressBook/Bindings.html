@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Bindings</title>
+    <meta charset="utf-8" />
+
+    <!--Style Sheets-->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!--Scripte-->
+    <script src="Scripts/angular.js"></script>
+</head>
+<body ng-app>
+
+    <h1>One Way Binding</h1> 
+    {{5*6}}
+    <div ng-bind="5*6"></div>
+
+    <h1>One Time Binding</h1>
+    {{:: name}}
+
+    <h1>Two Way Binding</h1>
+    Hallo Mr/Mrs {{name}} <br />
+    <input type="text" class="form-control" ng-model="name" ng-model-options="{updateOn:'blur'}"/>
+
+</body>
+</html>

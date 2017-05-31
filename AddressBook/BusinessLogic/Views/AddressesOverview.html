@@ -1,0 +1,35 @@
+﻿<h1>Address Book</h1>
+<div class="lead">
+    <a ui-sref="Overview.Modify">New Address</a>
+</div>
+
+<input type="text" class="form-control" placeholder="Search in your addresses" ng-model="search4Filter" />
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th ng-click="ChangeOrder('FirstName')">Name</th>
+            <th ng-click="ChangeOrder('SurName')">Surname</th>
+            <th ng-click="ChangeOrder('TelephoneNumber')">Telephone</th>
+            <th ng-click="ChangeOrder('Email')">Email</th>
+            <th ng-click="ChangeOrder('Birthday')">Birthday</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-show="addresses.length == 0">
+            <td colspan="5" style="text-align:center">
+                <i class="fa  fa-spinner  fa-pulse  fa-4x  fa-fw"></i>
+            </td>
+        </tr>
+        <tr id="main-tr" ng-repeat="address in addresses | filter: search4Filter | orderBy: order4Filter">
+            <td>{{address.FirstName}}</td>
+            <td>{{address.SurName}}</td>
+            <td>{{address.TelephoneNumber}}</td>
+            <td ng-bind-html="address.Email | linky | IconMailFilter"></td>
+            <td>{{address.Birthday | date: 'fullDate'}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<form ui-view></form>

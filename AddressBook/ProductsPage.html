@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+
+
+    <!--Style Sheets-->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!--Scripte-->
+    <script src="Scripts/angular.js"></script>
+    <script src="BusinessLogic/Module/AddressModule.js"></script>
+    <script src="BusinessLogic/Controllers/ProductController.js"></script>
+
+    <script src="Scripts/i18n/angular-locale_en-us.js"></script>
+</head>
+<body ng-app="AddressModule">
+
+    <div ng-controller="ProductController">
+
+        <h1>{{:: header }}</h1>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Description</th>
+
+                    <th>Price</th>
+                    <th>Rating</th>
+
+                    <th>Release Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products">
+                    <td>{{product.ID + 1 }}</td>
+                    <td>{{product.Name}}</td>
+                    <td>{{product.Description}}</td>
+
+                    <td>{{product.Price | currency}}</td>
+                    <td>{{product.Rating}}</td>
+
+                    <td>{{product.ReleaseDate | date: 'fullDate'}}</td>
+                </tr>
+
+                <tr>
+                    <td>#</td>
+                    <td>
+                        <input type="text" ng-model="newProduct.Name" class="form-control">
+                    </td>
+                    <td>
+                        <input type="text" ng-model="newProduct.Description" class="form-control">
+                    </td>
+                    <td>
+                        <input type="text" ng-model="newProduct.Price" class="form-control">
+                    </td>
+                    <td>
+                        <input type="range" ng-model="newProduct.Rating" max="10">
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" ng-click="Add(newProduct)">Save</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+</html>

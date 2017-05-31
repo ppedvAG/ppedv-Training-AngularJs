@@ -1,0 +1,53 @@
+﻿<div class="form-horizontal">
+
+    <!--        Eingabe Vorname     -->
+    <div class="form-group">
+        <label for="inputFirstName" class="col-lg-2 control-label">Firstname</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" ng-model="newAddress.FirstName">
+        </div>
+    </div>
+
+
+    <!--        Eingabe Nachname    -->
+    <div class="form-group">
+        <label for="inputSurname" class="col-lg-2 control-label">Surname</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputSurname" placeholder="Surname" ng-model="newAddress.SurName">
+        </div>
+    </div>
+
+
+    <!--        Eingabe Telefon     -->
+    <div class="form-group">
+        <label for="inputTelephon" class="col-lg-2 control-label">Telephon</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputTelephon" placeholder="Telephon" ng-model="newAddress.TelephoneNumber">
+        </div>
+    </div>
+
+
+    <!--        Eingabe Email   -->
+    <div class="form-group">
+        <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputEmail" placeholder="Email" ng-model="newAddress.Email">
+        </div>
+    </div>
+
+
+    <!--        Eingabe Geburtstag  -->
+    <div class="form-group">
+        <label for="inputBirthday" class="col-lg-2 control-label">Birthday</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputBirthday" placeholder="Birthday" ng-model="newAddress.Birthday">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+            <button class="btn btn-default" ui-sref="Overview">Back</button>
+            <button class="btn btn-success" ng-click="Save(newAddress)">Save</button>
+        </div>
+    </div>
+</div>
